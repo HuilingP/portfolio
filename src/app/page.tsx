@@ -1,37 +1,37 @@
-"use client"
-import { useEffect, useRef } from "react";
+"use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
   const heroRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     // 设置初始状态
     gsap.set([".hero-title", ".hero-subtitle"], {
       opacity: 0,
-      y: 50
+      y: 50,
     });
-    
+
     // Hero 动画
     const heroTimeline = gsap.timeline({
-      delay: 0.2
+      delay: 0.2,
     });
-    
+
     heroTimeline.to(".hero-title", {
       y: 0,
       opacity: 1,
       duration: 1.2,
-      ease: "power4.out"
+      ease: "power4.out",
     })
-    .to(".hero-subtitle", {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power3.out"
-    }, "-=0.8");
+      .to(".hero-subtitle", {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+      }, "-=0.8");
 
     // 背景视差效果
     gsap.to(".parallax-bg", {
@@ -39,112 +39,142 @@ export default function Home() {
         trigger: "body",
         start: "top top",
         end: "bottom bottom",
-        scrub: 1
+        scrub: 1,
       },
       y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-      ease: "none"
+      ease: "none",
     });
 
     // Vision Section 动画
     gsap.set([".vision-title", ".vision-main", ".vision-desc"], {
       opacity: 0,
-      y: 50
+      y: 50,
     });
 
     gsap.to(".vision-title", {
       scrollTrigger: {
         trigger: ".vision-content",
         start: "top center+=100",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none reverse",
       },
       opacity: 1,
       y: 0,
       duration: 1.2,
-      ease: "power4.out"
+      ease: "power4.out",
     });
 
     gsap.to(".vision-main", {
       scrollTrigger: {
         trigger: ".vision-content",
         start: "top center+=50",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none reverse",
       },
       opacity: 1,
       y: 0,
       duration: 1.2,
       delay: 0.3,
-      ease: "power4.out"
+      ease: "power4.out",
     });
 
     gsap.to(".vision-desc", {
       scrollTrigger: {
         trigger: ".vision-content",
         start: "top center",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none reverse",
       },
       opacity: 1,
       y: 0,
       duration: 1.2,
       delay: 0.6,
-      ease: "power4.out"
+      ease: "power4.out",
     });
 
     // Social Media Sections 动画
     gsap.set([".wechat-title", ".wechat-main", ".xiaohongshu-title", ".xiaohongshu-main"], {
       opacity: 0,
-      y: 50
+      y: 50,
     });
 
     gsap.to(".wechat-title", {
       scrollTrigger: {
         trigger: ".wechat-content",
         start: "top center+=100",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none reverse",
       },
       opacity: 1,
       y: 0,
       duration: 1.2,
-      ease: "power4.out"
+      ease: "power4.out",
     });
 
     gsap.to(".wechat-main", {
       scrollTrigger: {
         trigger: ".wechat-content",
         start: "top center",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none reverse",
       },
       opacity: 1,
       y: 0,
       duration: 1.2,
       delay: 0.3,
-      ease: "power4.out"
+      ease: "power4.out",
     });
 
     gsap.to(".xiaohongshu-title", {
       scrollTrigger: {
         trigger: ".xiaohongshu-content",
         start: "top center+=100",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none reverse",
       },
       opacity: 1,
       y: 0,
       duration: 1.2,
-      ease: "power4.out"
+      ease: "power4.out",
     });
 
     gsap.to(".xiaohongshu-main", {
       scrollTrigger: {
         trigger: ".xiaohongshu-content",
         start: "top center",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none reverse",
       },
       opacity: 1,
       y: 0,
       duration: 1.2,
       delay: 0.3,
-      ease: "power4.out"
+      ease: "power4.out",
     });
 
+    // AI 实验 Section 动画
+    gsap.set([".ai-experiment-title", ".ai-experiment-main"], {
+      opacity: 0,
+      y: 50,
+    });
+
+    gsap.to(".ai-experiment-title", {
+      scrollTrigger: {
+        trigger: ".ai-experiment-content",
+        start: "top center+=100",
+        toggleActions: "play none none reverse",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: "power4.out",
+    });
+
+    gsap.to(".ai-experiment-main", {
+      scrollTrigger: {
+        trigger: ".ai-experiment-content",
+        start: "top center",
+        toggleActions: "play none none reverse",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      delay: 0.3,
+      ease: "power4.out",
+    });
   }, []);
 
   return (
@@ -162,7 +192,7 @@ export default function Home() {
           <span className="block text-2xl md:text-3xl mt-2 text-gray-600">Huiling Pan</span>
         </h1>
         <p className="hero-subtitle text-lg md:text-xl text-gray-600 max-w-2xl text-center leading-relaxed opacity-0 translate-y-[50px]">
-          AI 创业公司 COO & 合伙人 | 跨文化交流者 | 新媒体创作者
+          AI 创业者 | 跨文化交流者 | AI 普惠者
         </p>
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
           <svg className="w-6 h-6 text-gray-400" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -182,7 +212,8 @@ export default function Home() {
             "创立一家改变世界的 AI 公司"
           </p>
           <p className="vision-desc text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto opacity-0 translate-y-[50px]">
-            以创新的技术和人文关怀，打造具有全球影响力的 AI 解决方案<br/>
+            以创新的技术和人文关怀，打造具有全球影响力的 AI 解决方案
+            <br />
             让 AI 技术真正服务于人类，创造更美好的未来
           </p>
         </div>
@@ -200,7 +231,8 @@ export default function Home() {
               在微信公众号，我记录着通往梦想的每一步思考
             </p>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              从技术创新到商业洞察，分享 AI 创业路上的点滴心得<br/>
+              从技术创新到商业洞察，分享 AI 创业路上的点滴心得
+              <br />
               期待与你一起探索未来科技的无限可能
             </p>
           </div>
@@ -219,7 +251,8 @@ export default function Home() {
               在小红书，我正在构建起通往全球的桥梁
             </p>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              超过 1000 位来自世界各地的朋友在这里相聚<br/>
+              超过 1000 位来自世界各地的朋友在这里相聚
+              <br />
               用真诚的对话，打破文化的界限，链接全球的创新力量
             </p>
           </div>

@@ -1,8 +1,10 @@
 {
-  "name": "boot-nextjs",
+  "name": "huiling-pan-personal-website",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "潘慧玲的个人网站",
+  "author": "Huiling Pan",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
