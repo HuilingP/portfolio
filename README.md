@@ -1,6 +1,6 @@
-# 潘慧玲的个人网站
+# Huiling Personal Page
 
-这是潘慧玲的个人网站项目，基于 [Next.js](https://nextjs.org/) 构建。
+Build with [Next.js](https://nextjs.org/) 
 
 ## 网站内容
 
